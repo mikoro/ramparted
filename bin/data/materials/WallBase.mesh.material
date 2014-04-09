@@ -1,0 +1,31 @@
+material WallBaseSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.3 0.3 0.3
+			
+			texture_unit
+			{
+				texture RockwallTiled.jpg
+			}
+		}
+	}
+}
+
+material WallBaseSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.2 0.2 0.1
+		}
+		
+		texture_unit
+			{
+				texture Sand.jpg
+			}
+	}
+}

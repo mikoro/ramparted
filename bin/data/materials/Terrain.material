@@ -1,0 +1,27 @@
+material TerrainMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			
+			texture_unit
+			{
+				texture TerrainTexture1.png
+			}
+		}
+		
+		pass
+		{
+			lighting off
+			scene_blend modulate
+
+			texture_unit
+			{
+				// dynamically created
+				texture TerrainLightmap
+			}
+		}
+	}
+}

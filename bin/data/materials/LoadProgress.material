@@ -1,0 +1,28 @@
+material LoadProgressBackgroundMaterial
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture LoadProgressBackground.png
+			}
+		}
+	}
+}
+
+material LoadProgressBarMaterial
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture LoadProgressBar.png
+			}
+		}
+	}
+}
+

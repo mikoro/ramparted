@@ -1,0 +1,22 @@
+
+material CannonTubeSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.1 0.1 0.1
+		}
+	}
+}
+
+material CannonTubeSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.2 0.2 0.2
+		}
+	}
+}

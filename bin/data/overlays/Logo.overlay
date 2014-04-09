@@ -1,0 +1,14 @@
+LogoOverlay
+{
+	zorder 0
+	
+	container Panel(LogoPanel)
+	{
+		width 0.9
+		height 0.9
+		left 0.05
+		
+		material LogoMaterial
+	}
+}
+

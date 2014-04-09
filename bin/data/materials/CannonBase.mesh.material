@@ -1,0 +1,10 @@
+material CannonBase_material
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.05 0.05 0.05
+		}
+	}
+}

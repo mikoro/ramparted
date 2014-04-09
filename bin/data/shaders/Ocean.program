@@ -1,0 +1,22 @@
+vertex_program OceanVP cg
+{
+	source Ocean.cg
+	entry_point ocean_vp
+	profiles vs_1_1 arbvp1
+
+	default_params
+	{
+		param_named_auto worldViewProj_matrix worldviewproj_matrix
+		param_named_auto eyePosition camera_position_object_space
+		param_named scale float3 0.002 0 0.003
+		param_named_auto time_0_X time_0_x 100.0
+	}
+}
+
+fragment_program OceanFP cg
+{
+	source Ocean.cg
+	entry_point ocean_fp
+	profiles ps_2_0 arbfp1
+}
+

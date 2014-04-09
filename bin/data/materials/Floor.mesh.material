@@ -1,0 +1,31 @@
+material FloorSub_blue
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0 0 0.2
+		}
+	}
+}
+
+material FloorSub_red
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.2 0 0
+		}
+	}
+}
+material FloorMaterial
+{
+	technique Default
+	{
+		pass Main
+		{
+		}
+	}
+}
+

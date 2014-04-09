@@ -1,0 +1,63 @@
+struct VS_OUTPUT {
+   float4 Pos:    POSITION;
+   float3 uvw:    TEXCOORD0;
+   float3 normal: TEXCOORD1;
+   float3 vVec:   TEXCOORD2;
+};
+
+VS_OUTPUT ocean_vp(float4 Pos: POSITION, float3 normal: NORMAL,
+					uniform float4x4 worldViewProj_matrix,
+					uniform float3 scale,
+					uniform float2 waveSpeed,
+					uniform float noiseSpeed,
+					uniform float time_0_X,
+					uniform float3 eyePosition)
+{
+   VS_OUTPUT Out;
+
+   Out.Pos = mul(worldViewProj_matrix, Pos);
+   
+   // uvw is the calculated uvw coordinates based on vertex position
+   Out.uvw = Pos.xyz * scale;
+   Out.uvw.xz += waveSpeed * time_0_X;
+   Out.uvw.y += Out.uvw.z + noiseSpeed * time_0_X;
+   
+   //  the view vector needs to be in vertex space
+   Out.vVec = Pos.xyz - eyePosition;
+   Out.normal = normal;
+
+   return Out;
+}
+
+float4 ocean_fp(float3 uvw: TEXCOORD0, float3 normal: TEXCOORD1, float3 vVec: TEXCOORD2,
+				uniform float fadeBias,
+				uniform float fadeExp,
+				uniform float4 waterColor,
+				uniform sampler Noise,
+				uniform sampler skyBox) : COLOR
+{
+   float3 noisy = tex3D(Noise, uvw).xyz;
+
+   // convert to Signed noise 
+   float3 bump = 2 * noisy - 1;
+   bump.xz *= 0.15;
+   // Make sure the normal always points upwards
+   // note that Ogres y axis is vertical (RM Z axis is vertical)
+   bump.y = 0.8 * abs(bump.y) + 0.2;
+   // Offset the surface normal with the bump
+   bump = normalize(normal + bump);
+
+   // Find the reflection vector
+   float3 normView = normalize(vVec);
+   float3 reflVec = reflect(normView, bump);
+   // Ogre has z flipped for cubemaps
+   reflVec.z = -reflVec.z;
+   float4 refl = texCUBE(skyBox, reflVec);
+
+   // set up for fresnel calc
+   float lrp = 1 - dot(-normView, bump);
+   
+   // Interpolate between the water color and reflection for fresnel effect
+   return lerp(waterColor, refl, saturate(fadeBias + pow(lrp, fadeExp)));
+}
+

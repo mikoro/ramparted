@@ -1,0 +1,48 @@
+material OceanMaterial
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref OceanVP
+			{
+				param_named waveSpeed float2 0.0 -0.15
+				param_named noiseSpeed float 0.15
+			}
+
+			fragment_program_ref OceanFP
+			{
+				param_named fadeBias float 0.336
+				param_named fadeExp float 5.546
+				param_named waterColor float4 0.0 0.15 0.3 1.0
+			}
+
+			texture_unit
+			{
+				texture NoiseVolume.dds 3d
+				tex_coord_set 0
+				filtering linear linear none
+			}
+
+			texture_unit
+			{
+				cubic_texture Sky.jpg combinedUVW
+				tex_address_mode clamp
+				tex_coord_set 1
+			}
+		}
+	}
+}
+
+material OceanMaterialLow
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0 0 0.4
+			specular 1 1 1
+		}
+	}
+}
+

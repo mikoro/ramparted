@@ -1,0 +1,10 @@
+material WallMiddel_material
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.15 0.15 0.15
+		}
+	}
+}

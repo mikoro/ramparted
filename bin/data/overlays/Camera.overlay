@@ -1,0 +1,74 @@
+CameraOverlay
+{
+	zorder 100
+	
+	container Panel(CameraPanel)
+	{
+		metrics_mode pixels
+		width 450
+		height 110
+		top 50
+		material FpsPanelMaterial
+		
+		element TextArea(HeaderTextArea)
+		{
+			metrics_mode pixels
+			left 6
+			top 4
+			width 200
+			height 30
+			font_name DejaVuSansMono
+			char_height 16
+			caption Camera
+		}
+		
+		element TextArea(CameraPositionTextArea)
+		{
+			metrics_mode pixels
+			left 6
+			top 30
+			width 200
+			height 30
+			font_name DejaVuSansMono
+			char_height 16
+			caption Position:
+		}
+		
+		element TextArea(CameraOrientationTextArea)
+		{
+			metrics_mode pixels
+			left 6
+			top 50
+			width 200
+			height 30
+			font_name DejaVuSansMono
+			char_height 16
+			caption Orientation:
+		}
+		
+		element TextArea(CameraAspectTextArea)
+		{
+			metrics_mode pixels
+			left 6
+			top 70
+			width 200
+			height 30
+			font_name DejaVuSansMono
+			char_height 16
+			caption Aspect ratio:
+		}
+		
+		element TextArea(CameraFOVTextArea)
+		{
+			metrics_mode pixels
+			left 6
+			top 90
+			width 200
+			height 30
+			font_name DejaVuSansMono
+			char_height 16
+			caption Field of view:
+		}
+	}
+}
+

@@ -1,0 +1,52 @@
+vertex_program TransformLightVP cg
+{
+	source TransformLight.cg
+	entry_point transformLight_vp
+	profiles vs_1_1 arbvp1
+	
+	default_params
+	{
+		param_named_auto worldViewProj worldviewproj_matrix
+		param_named_auto globalAmbient ambient_light_colour
+		param_named_auto lightColor light_diffuse_colour 0
+		param_named_auto lightPosition light_position_object_space 0
+		param_named_auto eyePosition camera_position_object_space
+		param_named_auto Ke surface_emissive_colour
+		param_named_auto Ka surface_ambient_colour
+		param_named_auto Kd surface_diffuse_colour
+		param_named_auto Ks surface_specular_colour
+		param_named_auto shininess surface_shininess
+	}
+}
+
+vertex_program TransformLightVPPass cg
+{
+	source TransformLight.cg
+	entry_point transformLight_vp_pass
+	profiles vs_1_1 arbvp1
+	
+	default_params
+	{
+		param_named_auto worldViewProj worldviewproj_matrix
+	}
+}
+
+fragment_program TransformLightFP cg
+{
+	source TransformLight.cg
+	entry_point transformLight_fp
+	profiles ps_1_1 arbfp1
+	
+	default_params
+	{
+		param_named_auto globalAmbient ambient_light_colour
+		param_named_auto lightColor light_diffuse_colour 0
+		param_named_auto lightPosition light_position_object_space 0
+		param_named_auto eyePosition camera_position_object_space
+		param_named_auto Ke surface_emissive_colour
+		param_named_auto Ka surface_ambient_colour
+		param_named_auto Kd surface_diffuse_colour
+		param_named_auto Ks surface_specular_colour
+		param_named_auto shininess surface_shininess
+	}
+}

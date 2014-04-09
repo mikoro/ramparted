@@ -1,0 +1,33 @@
+ConsoleOverlay
+{
+	zorder 101
+	
+	container Panel(ConsoleBackgroundPanel)
+	{
+		material ConsoleBackgroundMaterial
+		metrics_mode pixels
+		
+		container Panel(ConsoleInputBackgroundPanel)
+		{
+			material ConsoleInputBackgroundMaterial
+			metrics_mode pixels
+			top 327
+			
+			element Panel(ConsoleCursorPanel)
+			{
+				material ConsoleCursorMaterial
+				metrics_mode pixels
+				width 8
+				height 1
+			}
+		}
+		
+		element Panel(ConsoleBorderPanel)
+		{
+			material ConsoleBorderMaterial
+			metrics_mode pixels
+			top 350
+		}
+	}
+}
+

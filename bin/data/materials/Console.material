@@ -1,0 +1,61 @@
+material ConsoleBackgroundMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			
+			texture_unit
+			{
+				texture ConsoleBackground.png
+			}
+		}
+	}
+}
+
+material ConsoleInputBackgroundMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			
+			texture_unit
+			{
+				texture ConsoleInputBackground.png
+			}
+		}
+	}
+}
+
+material ConsoleCursorMaterial
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture ConsoleCursor.png
+			}
+		}
+	}
+}
+
+material ConsoleBorderMaterial
+{
+	technique
+	{
+		pass
+		{
+			scene_blend alpha_blend
+			
+			texture_unit
+			{
+				texture ConsoleBorder.png
+			}
+		}
+	}
+}

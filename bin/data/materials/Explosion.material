@@ -1,0 +1,56 @@
+material ExplosionSmokeMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture Smoke.png
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material ExplosionParticleMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+			
+			texture_unit
+			{
+				texture explosionparticle1.png
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material WaterSplashMaterial
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture Smoke.png
+				tex_address_mode clamp
+			}
+		}
+	}
+}

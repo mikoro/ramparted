@@ -1,0 +1,10 @@
+material WallCorner_material
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.1 0.1 0.1
+		}
+	}
+}

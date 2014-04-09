@@ -1,0 +1,27 @@
+
+material WallBurntSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.3 0.3 0.3
+			
+			texture_unit
+			{
+				texture RockwallTiled.jpg
+			}
+		}
+	}
+}
+
+material WallBurntSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.01 0.01 0.01
+		}
+	}
+}

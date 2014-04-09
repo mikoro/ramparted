@@ -1,0 +1,56 @@
+LoadProgressOverlay
+{
+	zorder 0
+	
+	container Panel(LoadProgressPanel)
+	{
+		width 1
+		height 1
+		
+		container Panel(LoadProgressBackgroundPanel)
+		{
+			material LoadProgressBackgroundMaterial
+			metrics_mode pixels
+			vert_align center
+			horz_align center
+			width 600
+			height 200
+			top -100
+			left -300
+			
+			container Panel(LoadProgressBarPanel)
+			{
+				material LoadProgressBarMaterial
+				metrics_mode pixels
+				width 536
+				height 56
+				left 36
+				top 36
+			}
+			
+			element TextArea(LoadProgressPercentageTextArea)
+			{
+				metrics_mode pixels
+				vert_align center
+				horz_align center
+				top -40
+				font_name DejaVuSansMono
+				char_height 16
+				caption 100%
+			}
+			
+			element TextArea(LoadProgressInfoTextArea)
+			{
+				metrics_mode pixels
+				vert_align center
+				horz_align center
+				top 40
+				left -50
+				font_name DejaVuSansMono
+				char_height 16
+				caption Loading, please wait...
+			}
+		}
+	}
+}
+

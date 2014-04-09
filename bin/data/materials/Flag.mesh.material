@@ -1,0 +1,47 @@
+
+material FlagSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+		}
+	}
+}
+
+material FlagRed
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0.5 0 0
+			cull_hardware none
+		}
+	}
+}
+
+material FlagBlue
+{
+	technique
+	{
+		pass
+		{
+			diffuse 0 0 0.5
+			cull_hardware none
+		}
+	}
+}
+
+material FlagSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.3 0.3 0.3
+		}
+
+	}
+
+}

@@ -1,0 +1,26 @@
+
+material CannonBurntSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.03 0.03 0.03
+		}
+
+	}
+
+}
+
+material CannonBurntSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.01 0.01 0.01
+		}
+
+	}
+
+}

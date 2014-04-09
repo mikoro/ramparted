@@ -1,0 +1,23 @@
+
+material CastleSub_mat1
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.2 0.2 0.2
+		}
+	}
+}
+
+material CastleSub_mat2
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.15 0.15 0.15
+		}
+	}
+}
+

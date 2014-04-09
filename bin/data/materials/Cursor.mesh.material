@@ -1,0 +1,22 @@
+
+material CursorBlue_material
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0 0 0.5
+		}
+	}
+}
+
+material CursorRed_material
+{
+	technique Default
+	{
+		pass Main
+		{
+			diffuse 0.5 0 0
+		}
+	}
+}

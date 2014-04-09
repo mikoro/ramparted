@@ -1,0 +1,156 @@
+ExplosionSmokeParticle
+{
+	material ExplosionSmokeMaterial
+	particle_width 40
+	particle_height 40
+	cull_each true
+	quota 5000
+	billboard_type point
+	sorted true
+	
+	emitter Point
+	{
+		angle 30
+		emission_rate 500
+		time_to_live 3
+		direction 0 1 0
+		velocity 150
+		duration 0.05
+	}
+
+	affector ColourImage
+	{
+		image explosionsmokecolors.png
+	}
+
+	affector Rotator
+	{
+		rotation_speed_range_start -100
+		rotation_speed_range_end 100
+	}
+
+	affector Interpolation
+	{
+		relative_velocity true
+		values 0 1  1 0.2
+	}
+	
+	affector Interpolation
+	{
+		relative_size true
+		values 0 0.1  0.01 5  0.1 1  1 4
+	}
+}
+
+ExplosionParticle
+{
+	material ExplosionParticleMaterial
+	particle_width 20
+	particle_height 20
+	cull_each true
+	quota 5000
+	billboard_type oriented_self
+
+	emitter Point
+	{
+		angle 80
+		emission_rate 600
+		time_to_live 1
+		direction 0 1 0
+		velocity 400
+		duration 0.05
+	}
+	
+	affector Rotator
+	{
+		rotation_speed_range_start 500
+		rotation_speed_range_end 1000
+	}
+		
+	affector Interpolation
+	{
+		relative_velocity true
+		values 0 2  0.5 0.5 1 0.1
+	}
+	
+	affector LinearForce
+	{
+		force_vector 0 -2000 0
+	}
+}
+
+CannonBallHitParticle
+{
+	material ExplosionSmokeMaterial
+	particle_width 40
+	particle_height 40
+	cull_each true
+	quota 5000
+	billboard_type point
+	sorted true
+	
+	emitter Point
+	{
+		angle 30
+		emission_rate 100
+		time_to_live 1
+		direction 0 1 0
+		velocity 150
+		duration 0.05
+	}
+
+	affector ColourImage
+	{
+		image explosionsmokecolors.png
+	}
+
+	affector Rotator
+	{
+		rotation_speed_range_start -100
+		rotation_speed_range_end 100
+	}
+}
+
+WaterSplashParticle
+{
+	material WaterSplashMaterial
+	particle_width 70
+	particle_height 70
+	cull_each true
+	quota 5000
+	billboard_type point
+	sorted true
+	
+	emitter Point
+	{
+		angle 5
+		emission_rate 100
+		time_to_live 0.5
+		direction 0 1 0
+		velocity 300
+		duration 0.1
+	}
+
+	affector ColourImage
+	{
+		image WaterSplashColors.png
+	}
+
+	affector Rotator
+	{
+		rotation_speed_range_start -100
+		rotation_speed_range_end 100
+	}
+	
+	affector Interpolation
+	{
+		relative_velocity true
+		values 0 1  1 0.2
+	}
+	
+	affector Interpolation
+	{
+		relative_size true
+		values 0 0 0.5 1 1 0
+	}
+}
