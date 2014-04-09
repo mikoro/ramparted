@@ -5,4 +5,4 @@ Ramparted is a simple 3D clone of the classic game [Rampart](http://en.wikipedia
 * Authors: Mikko Ronkainen, Teemu Kemppainen, Tuomas Seppänen
 * Website: [github.com/mikoro/ramparted](https://github.com/mikoro/ramparted)
 
-![Screenshot](http://mikoro.github.io/images/ramparted/readme-screenshot.png "Screenshot")
+![Screenshot](http://mikoro.github.io/images/ramparted/readme-screenshot.jpg "Screenshot")
